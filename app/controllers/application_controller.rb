@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # around_filter :catch_not_found
   helper_method :current_user
+  skip_before_filter :verify_authenticity_token
 
   def index
     render :index
